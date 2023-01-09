@@ -27,16 +27,15 @@ app.use(express.static('website'));
 app.post('/add', async (req, res) => {
     console.log('add data to projectData...');
     const data = await req.body;
-    const json = json(data);
-    projectData.push(json);
-    console.log('pushed data to projectData', `${projectData.length}`);
+    projectData.push(data);
+    console.log('pushed data to projectData', ' Length==>> ', `${projectData.length}`);
     res.send('POST request received...');
 });
 
 
 app.get('/all', (req, res) => {
     console.log('get request =>> /all...');
-    res.status(200).json(projectData);
+    res.json(projectData);
 });
 
 
