@@ -24,11 +24,13 @@ app.use(express.static('website'));
 
 
 // Setup Server
-app.post('/add', (req, res) => {
+app.post('/add', async (req, res) => {
     console.log('add data to projectData...');
-    const data = req.body.json();
-    projectData.push(data);
+    const data = await req.body;
+    const json = json(data);
+    projectData.push(json);
     console.log('pushed data to projectData', `${projectData.length}`);
+    res.send('POST request received...');
 });
 
 
