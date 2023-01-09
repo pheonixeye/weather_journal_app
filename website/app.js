@@ -91,6 +91,8 @@ genButton.addEventListener('click', async (_) => {
             });
 
             entriesList.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" });
+            cityTextfield.value = '';
+            feelingTextField.value = '';
         });
         console.log(allResponses);
     });
