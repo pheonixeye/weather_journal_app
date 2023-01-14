@@ -2,7 +2,9 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const CORS = require('cors');
 // Setup empty JS object to act as endpoint for all routes
-projectData = [];
+
+//! changed to js object instead of js array
+projectData = {};
 
 // Require Express to run server and routes
 
@@ -27,7 +29,8 @@ app.use(express.static('website'));
 app.post('/add', async (req, res) => {
     console.log('add data to projectData...');
     const data = await req.body;
-    projectData.push(data);
+    // projectData.push(data);
+    Object.assign(projectData, data);
     console.log('pushed data to projectData', ' Length==>> ', `${projectData.length}`);
     res.send('POST request received...');
 });

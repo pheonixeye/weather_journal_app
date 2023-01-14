@@ -91,7 +91,7 @@ async function fetchDataFromServer() {
 
 
 //!  and display the results.
-function rebuildUI(all) {
+function rebuildUI(...all) {
     all.map((e) => {
         entriesList.insertAdjacentHTML('afterbegin', buildNavItem(e));
         console.log('Mapped...');
