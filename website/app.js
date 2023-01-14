@@ -1,6 +1,6 @@
 /* Global Variables */
-
 const apiKey = 'c1793ff3b0d9bf1323bff4bd0366ab38';
+
 // var baseUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
 
 // Create a new date instance dynamically with JS
